@@ -61,6 +61,12 @@ bool j1App::Awake()
 	// If everything goes well, load the top tag inside the xml_node property
 	// created in the last TODO
 
+	pugi::xml_parse_result result = config.load_file("config.xml");
+	if (result)
+	{
+		node = config.first_child();
+	}
+
 	bool ret = true;
 
 	p2List_item<j1Module*>* item;
@@ -79,6 +85,13 @@ bool j1App::Awake()
 	 
 	// TODO 4: Read the title from the config file
 	// and set the window title using win->SetTitle()
+
+	/*for (pugi::xml_node_iterator iterator = node.begin(); iterator != node.end(); ++iterator)
+	{
+		win->SetTitle();
+	}*/
+
+	win->SetTitle(node.child("title").child_value());
 
 	return ret;
 }
