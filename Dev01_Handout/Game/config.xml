@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <config>
+  <title>Game Development Testbed</title>
   <app>
-    <title>Game Development Testbed</title>
     <organization>UPC</organization>
+    <name>NAME</name>	
+	
   </app>
 
   <renderer>

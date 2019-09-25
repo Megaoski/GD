@@ -2,6 +2,7 @@
 #define __j1INPUT_H__
 
 #include "j1Module.h"
+#include "PugiXml\src\pugixml.hpp"
 
 #define NUM_KEYS 352
 #define NUM_MOUSE_BUTTONS 5
@@ -36,7 +37,7 @@ public:
 	virtual ~j1Input();
 
 	// Called before render is available
-	bool Awake();
+	bool Awake(pugi::xml_node&);
 
 	// Called before the first frame
 	bool Start();

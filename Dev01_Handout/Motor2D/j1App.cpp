@@ -79,19 +79,25 @@ bool j1App::Awake()
 		// that can be used to read all variables for that module.
 		// Send nullptr if the node does not exist in config.xml
 
-		ret = item->data->Awake();
+		ret = item->data->Awake(config.child(item->data->name.GetString()));
+
+		if (!ret)
+		{
+			LOG("name: %s", item->data->name.GetString());
+		}
+
+		
+
+		//ret = item->data->Awake();
 		item = item->next; 
 	}
 	 
 	// TODO 4: Read the title from the config file
 	// and set the window title using win->SetTitle()
 
-	/*for (pugi::xml_node_iterator iterator = node.begin(); iterator != node.end(); ++iterator)
-	{
-		win->SetTitle();
-	}*/
+	/*App->win->titlewin = (config.first_child().child_value());*/
 
-	win->SetTitle(node.child("title").child_value());
+	App->win->SetTitle(node.child("title").child_value());
 
 	return ret;
 }

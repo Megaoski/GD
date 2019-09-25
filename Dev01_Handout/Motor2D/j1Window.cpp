@@ -19,7 +19,7 @@ j1Window::~j1Window()
 }
 
 // Called before render is available
-bool j1Window::Awake()
+bool j1Window::Awake(pugi::xml_node&)
 {
 	LOG("Init SDL window & surface");
 	bool ret = true;
@@ -72,6 +72,8 @@ bool j1Window::Awake()
 		{
 			//Get window surface
 			screen_surface = SDL_GetWindowSurface(window);
+
+			SetTitle(titlewin);
 
 		}
 	}

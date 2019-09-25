@@ -2,6 +2,7 @@
 #define __j1WINDOW_H__
 
 #include "j1Module.h"
+#include "PugiXml\src\pugixml.hpp"
 
 struct SDL_Window;
 struct SDL_Surface;
@@ -16,7 +17,7 @@ public:
 	virtual ~j1Window();
 
 	// Called before render is available
-	bool Awake();
+	bool Awake(pugi::xml_node&);
 
 	// Called before quitting
 	bool CleanUp();
@@ -36,6 +37,8 @@ public:
 
 	//The surface contained by the window
 	SDL_Surface* screen_surface;
+
+	const char * titlewin;
 
 private:
 	uint		width;

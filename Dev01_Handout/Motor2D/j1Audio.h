@@ -2,6 +2,7 @@
 #define __j1AUDIO_H__
 
 #include "j1Module.h"
+#include "PugiXml\src\pugixml.hpp"
 
 #define DEFAULT_MUSIC_FADE_TIME 2.0f
 
@@ -18,7 +19,7 @@ public:
 	virtual ~j1Audio();
 
 	// Called before render is available
-	bool Awake();
+	bool Awake(pugi::xml_node&);
 
 	// Called before quitting
 	bool CleanUp();
