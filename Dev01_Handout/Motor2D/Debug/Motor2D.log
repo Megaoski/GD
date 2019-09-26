@@ -1,2 +1,9 @@
 ﻿  j1App.cpp
-  Motor2D.vcxproj -> C:\Users\Usuario\Documents\GitHub\GD\Dev01_Handout\Debug\Motor 2D.exe
+  j1Audio.cpp
+  j1Input.cpp
+  j1Render.cpp
+  j1Scene.cpp
+  j1Textures.cpp
+  j1Window.cpp
+  Generating Code...
+  Motor2D.vcxproj -> C:\Users\oscarll3\Documents\GitHub\GD\Dev01_Handout\Debug\Motor 2D.exe
